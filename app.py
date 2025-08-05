@@ -22,7 +22,8 @@ moment = Moment(app)
 app.config.from_object('config.Config')
 db = SQLAlchemy(app)
 
-# TODO: connect to a local postgresql database (That action has now BEEN DONE. See config.py for database connection details.)
+# TODO: connect to a local postgresql database 
+# >>>>That action has now BEEN DONE. See config.py for database connection details.
 
 #----------------------------------------------------------------------------#
 # Models.
