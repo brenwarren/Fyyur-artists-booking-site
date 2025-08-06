@@ -8,6 +8,7 @@ import babel
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate ##added for database migrations
 import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
@@ -21,6 +22,7 @@ moment = Moment(app)
 #app.config.from_object('config')
 app.config.from_object('config.Config')
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)  ##added for database migrations
 
 # TODO: connect to a local postgresql database 
 # >>>>That action has now BEEN DONE. See config.py for database connection details.
@@ -41,7 +43,14 @@ class Venue(db.Model):
     image_link = db.Column(db.String(500))
     facebook_link = db.Column(db.String(120))
 
+    genres = db.Column(db.String(120))
+    website = db.Column(db.String(120))
+    seeking_talent = db.Column(db.Boolean, default=False)
+    seeking_description = db.Column(db.String(500))
+    shows = db.relationship('Show', backref='venue', lazy=True)
+
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
+    # >>>> Done - see new genres, website, seeking_talent, and seeking_description fields.
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
@@ -55,9 +64,24 @@ class Artist(db.Model):
     image_link = db.Column(db.String(500))
     facebook_link = db.Column(db.String(120))
 
+    website = db.Column(db.String(120))
+    seeking_venue = db.Column(db.Boolean, default=False)
+    seeking_description = db.Column(db.String(500))
+    shows = db.relationship('Show', backref='artist', lazy=True)
+
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
+    #>>>> Done - see new website, seeking_venue, and seeking_description fields.
 
 # TODO Implement Show and Artist models, and complete all model relationships and properties, as a database migration.
+#>>> Done - See Show model below created with relationships to Artist and Venue models.
+
+class Show(db.Model):
+    __tablename__ = 'Show'
+
+    id = db.Column(db.Integer, primary_key=True)
+    start_time = db.Column(db.DateTime, nullable=False)
+    artist_id = db.Column(db.Integer, db.ForeignKey('Artist.id'), nullable=False)
+    venue_id = db.Column(db.Integer, db.ForeignKey('Venue.id'), nullable=False)
 
 #----------------------------------------------------------------------------#
 # Filters.
@@ -89,6 +113,7 @@ def index():
 def venues():
   # TODO: replace with real venues data.
   #       num_upcoming_shows should be aggregated based on number of upcoming shows per venue.
+  
   data=[{
     "city": "San Francisco",
     "state": "CA",
