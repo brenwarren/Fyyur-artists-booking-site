@@ -13,6 +13,7 @@ import logging
 from logging import Formatter, FileHandler
 from flask_wtf import Form
 from forms import *
+import datetime
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -142,31 +143,35 @@ def index():
 
 @app.route('/venues')
 def venues():
-    # Query all venues
-    venues = Venue.query.all()
-
-    # Organize venues by city and state
-    data = []
-    locations = set()
-    for venue in venues:
-        locations.add((venue.city, venue.state))
-    for city, state in locations:
-        city_venues = []
+    try:
+        venues = Venue.query.all()
+        # Organize venues by city and state
+        data = []
+        locations = set()
         for venue in venues:
-            if venue.city == city and venue.state == state:
-                # Count upcoming shows
-                num_upcoming_shows = len([show for show in venue.shows if show.start_time > datetime.datetime.now()])
-                city_venues.append({
-                    "id": venue.id,
-                    "name": venue.name,
-                    "num_upcoming_shows": num_upcoming_shows
-                })
-        data.append({
-            "city": city,
-            "state": state,
-            "venues": city_venues
-        })
-    return render_template('pages/venues.html', areas=data)
+            locations.add((venue.city, venue.state))
+        for city, state in locations:
+            city_venues = []
+            for venue in venues:
+                if venue.city == city and venue.state == state:
+                    # Count upcoming shows
+                    num_upcoming_shows = len([show for show in venue.shows if show.start_time > datetime.datetime.now()])
+                    city_venues.append({
+                        "id": venue.id,
+                        "name": venue.name,
+                        "num_upcoming_shows": num_upcoming_shows
+                    })
+            data.append({
+                "city": city,
+                "state": state,
+                "venues": city_venues
+            })
+        return render_template('pages/venues.html', areas=data)
+    except Exception as e:
+        db.session.rollback()
+        return render_template('errors/500.html'), 500
+    finally:
+        db.session.close()
 
 
 
