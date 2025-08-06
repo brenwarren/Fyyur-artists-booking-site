@@ -5,15 +5,15 @@
 import json
 import dateutil.parser
 import babel
+import datetime
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate ##added for database migrations
 import logging
 from logging import Formatter, FileHandler
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from forms import *
-import datetime
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -145,17 +145,25 @@ def index():
 def venues():
     try:
         venues = Venue.query.all()
+        print(f"Found {len(venues)} venues in database")  # Debug info
+        
+        # If no venues, return empty data structure
+        if not venues:
+            data = []
+            return render_template('pages/venues.html', areas=data)
+        
         # Organize venues by city and state
         data = []
         locations = set()
         for venue in venues:
             locations.add((venue.city, venue.state))
+        
         for city, state in locations:
             city_venues = []
             for venue in venues:
                 if venue.city == city and venue.state == state:
                     # Count upcoming shows
-                    num_upcoming_shows = len([show for show in venue.shows if show.start_time > datetime.datetime.now()])
+                    num_upcoming_shows = len([show for show in venue.shows if show.start_time > datetime.now()])
                     city_venues.append({
                         "id": venue.id,
                         "name": venue.name,
@@ -166,8 +174,13 @@ def venues():
                 "state": state,
                 "venues": city_venues
             })
+        
+        print(f"Returning data: {data}")  # Debug info
         return render_template('pages/venues.html', areas=data)
     except Exception as e:
+        print(f"Error in venues route: {e}")  # Add debugging
+        import traceback
+        traceback.print_exc()  # Print full stack trace
         db.session.rollback()
         return render_template('errors/500.html'), 500
     finally:
