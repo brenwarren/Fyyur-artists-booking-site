@@ -322,7 +322,7 @@ def create_venue_submission():
       image_link=form.image_link.data,
       facebook_link=form.facebook_link.data,
       genres=','.join(form.genres.data) if isinstance(form.genres.data, list) else form.genres.data,
-      website=form.website.data,
+      website=form.website_link.data,
       seeking_talent=form.seeking_talent.data,
       seeking_description=form.seeking_description.data
     )
@@ -332,6 +332,7 @@ def create_venue_submission():
   except Exception as e:
     error = True
     db.session.rollback()
+    print(f"Error creating venue: {e}")  # Debug line
     flash('An error occurred. Venue ' + form.name.data + ' could not be listed.')
   finally:
     db.session.close()
