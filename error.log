@@ -21,3 +21,76 @@
 2025-08-06 18:43:41,953 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:615]
 2025-08-06 18:43:55,717 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:615]
 2025-08-06 18:47:15,175 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:616]
+2025-08-07 15:29:16,063 ERROR: Exception on /venues/7 [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2025-08-07 15:29:21,969 ERROR: Exception on /venues/5 [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2025-08-07 15:29:49,958 ERROR: Exception on /venues/7 [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2025-08-07 15:33:30,798 ERROR: Exception on /venues/7 [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
+    #   # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
+IndexError: list index out of range
+2025-08-07 15:33:36,240 ERROR: Exception on /venues/5 [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
+    #   # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
+IndexError: list index out of range
