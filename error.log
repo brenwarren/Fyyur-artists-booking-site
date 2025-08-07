@@ -94,3 +94,7 @@ Traceback (most recent call last):
   File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 287, in show_venue
     #   # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
 IndexError: list index out of range
+2025-08-07 16:37:10,200 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:717]
+2025-08-07 17:09:17,413 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
+2025-08-07 17:09:58,508 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
+2025-08-07 17:11:25,128 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]

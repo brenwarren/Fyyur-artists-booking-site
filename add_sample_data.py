@@ -73,6 +73,16 @@ def add_sample_data():
             seeking_venue=False
         )
         
+        artist3 = Artist(
+            name="The Wild Sax Band",
+            city="San Francisco",
+            state="CA",
+            phone="432-325-5432",
+            genres="Jazz,Classical",
+            image_link="https://images.unsplash.com/photo-1558369981-f9ca78462e61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
+            seeking_venue=False
+        )
+        
         try:
             # Add to database
             db.session.add(venue1)
@@ -80,6 +90,7 @@ def add_sample_data():
             db.session.add(venue3)
             db.session.add(artist1)
             db.session.add(artist2)
+            db.session.add(artist3)
             db.session.commit()
             
             # Add some shows
@@ -97,19 +108,33 @@ def add_sample_data():
             
             show3 = Show(
                 start_time=datetime(2035, 4, 1, 20, 0),
-                artist_id=artist2.id, 
+                artist_id=artist3.id, 
+                venue_id=venue3.id
+            )
+            
+            show4 = Show(
+                start_time=datetime(2035, 4, 8, 20, 0),
+                artist_id=artist3.id, 
+                venue_id=venue3.id
+            )
+            
+            show5 = Show(
+                start_time=datetime(2035, 4, 15, 20, 0),
+                artist_id=artist3.id, 
                 venue_id=venue3.id
             )
             
             db.session.add(show1)
             db.session.add(show2)
             db.session.add(show3)
+            db.session.add(show4)
+            db.session.add(show5)
             db.session.commit()
             
             print("Sample data added successfully!")
             print(f"Added {len([venue1, venue2, venue3])} venues")
-            print(f"Added {len([artist1, artist2])} artists")
-            print(f"Added {len([show1, show2, show3])} shows")
+            print(f"Added {len([artist1, artist2, artist3])} artists")
+            print(f"Added {len([show1, show2, show3, show4, show5])} shows")
             
         except Exception as e:
             print(f"Error adding sample data: {e}")
