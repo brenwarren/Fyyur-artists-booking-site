@@ -1,4 +1,3 @@
-
 /**
  * @file
  * Main stylesheet file.
@@ -208,4 +207,8 @@ h2.monospace {
 }
 .subtitle {
   opacity: 0.5;
+}
+.form-group form {
+    display: inline-block;
+    margin-left: 20px;
 }

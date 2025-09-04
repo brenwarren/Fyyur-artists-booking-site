@@ -868,3 +868,23 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
 '''
+
+@app.route('/artists/<int:artist_id>/delete', methods=['POST'])
+def delete_artist(artist_id):
+    try:
+        artist = Artist.query.get_or_404(artist_id)
+        
+        # Delete associated shows first
+        Show.query.filter_by(artist_id=artist_id).delete()
+        
+        # Delete the artist
+        db.session.delete(artist)
+        db.session.commit()
+        
+        flash(f'Artist {artist.name} was successfully deleted!')
+        return redirect(url_for('artists'))
+        
+    except Exception as e:
+        db.session.rollback()
+        flash(f'An error occurred deleting the artist: {str(e)}')
+        return redirect(url_for('show_artist', artist_id=artist_id))
