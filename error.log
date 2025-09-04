@@ -98,3 +98,7 @@ IndexError: list index out of range
 2025-08-07 17:09:17,413 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
 2025-08-07 17:09:58,508 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
 2025-08-07 17:11:25,128 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
+2025-09-04 15:46:48,634 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-04 15:46:48,883 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-04 15:46:49,229 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-04 15:51:54,863 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
