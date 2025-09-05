@@ -102,3 +102,194 @@ IndexError: list index out of range
 2025-09-04 15:46:48,883 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
 2025-09-04 15:46:49,229 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
 2025-09-04 15:51:54,863 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-05 19:52:09,445 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-05 19:53:01,315 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 794, in shows
+    return render_template('pages/shows.html', shows=data)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/pages/shows.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/layouts/main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/pages/shows.html", line 9, in block 'content'
+    <h4>{{ show.start_time|datetime('full') }}</h4>
+    ^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 92, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/dateutil/parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/dateutil/parser.py", line 587, in parse
+    if (isinstance(tzinfos, collections.Callable) or
+                            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collections' has no attribute 'Callable'
+2025-09-05 20:12:01,227 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-05 20:12:01,542 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:852]
+2025-09-05 20:12:33,201 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column Venue.website_link does not exist
+LINE 1: ..., "Venue".facebook_link AS "Venue_facebook_link", "Venue".we...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 787, in shows
+    "venue_name": show.venue.name,
+                  ^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py", line 569, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py", line 1096, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/attributes.py", line 1131, in _fire_loader_callables
+    return self.callable_(state, passive)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/strategies.py", line 978, in _load_for_state
+    return self._emit_lazyload(
+           ~~~~~~~~~~~~~~~~~~~^
+        session,
+        ^^^^^^^^
+    ...<7 lines>...
+        execution_options,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/strategies.py", line 1079, in _emit_lazyload
+    return loading.load_on_pk_identity(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        session,
+        ^^^^^^^^
+    ...<3 lines>...
+        execution_options=execution_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/loading.py", line 694, in load_on_pk_identity
+    session.execute(
+    ~~~~~~~~~~~~~~~^
+        q,
+        ^^
+    ...<2 lines>...
+        bind_arguments=bind_arguments,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1413, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1840, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1980, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 2349, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py", line 1961, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py", line 944, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column Venue.website_link does not exist
+LINE 1: ..., "Venue".facebook_link AS "Venue_facebook_link", "Venue".we...
+                                                             ^
+
+[SQL: SELECT "Venue".id AS "Venue_id", "Venue".name AS "Venue_name", "Venue".city AS "Venue_city", "Venue".state AS "Venue_state", "Venue".address AS "Venue_address", "Venue".phone AS "Venue_phone", "Venue".image_link AS "Venue_image_link", "Venue".facebook_link AS "Venue_facebook_link", "Venue".website_link AS "Venue_website_link", "Venue".seeking_talent AS "Venue_seeking_talent", "Venue".seeking_description AS "Venue_seeking_description", "Venue".genres AS "Venue_genres" 
+FROM "Venue" 
+WHERE "Venue".id = %(pk_1)s]
+[parameters: {'pk_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
