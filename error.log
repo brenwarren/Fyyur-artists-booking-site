@@ -98,3 +98,47 @@ IndexError: list index out of range
 2025-08-07 17:09:17,413 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
 2025-08-07 17:09:58,508 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
 2025-08-07 17:11:25,128 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:778]
+2025-09-05 20:31:15,411 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:855]
+2025-09-05 20:31:15,683 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:855]
+2025-09-05 20:36:02,720 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:855]
+2025-09-05 20:36:58,507 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 797, in shows
+    return render_template('pages/shows.html', shows=data)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/pages/shows.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/layouts/main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/templates/pages/shows.html", line 9, in block 'content'
+    <h4>{{ show.start_time|datetime('full') }}</h4>
+    ^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 93, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/dateutil/parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/dateutil/parser.py", line 587, in parse
+    if (isinstance(tzinfos, collections.Callable) or
+                            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'collections' has no attribute 'Callable'
+2025-09-05 20:41:59,151 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:855]
