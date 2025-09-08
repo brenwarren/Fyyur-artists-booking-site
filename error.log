@@ -142,3 +142,159 @@ Traceback (most recent call last):
                             ^^^^^^^^^^^^^^^^^^^^
 AttributeError: module 'collections' has no attribute 'Callable'
 2025-09-05 20:41:59,151 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:855]
+2025-09-08 12:15:27,777 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:15:28,078 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:15:47,398 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:27:11,457 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:28:04,615 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:28:31,556 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:28:31,837 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:41:55,255 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:43:15,422 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:43:42,930 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 788, in shows
+    shows = Show.query.join(Artist).join(Venue).all()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/session.py", line 53, in get_bind
+    engines = self._db.engines
+              ^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 642, in engines
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2025-09-08 12:43:48,178 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 788, in shows
+    shows = Show.query.join(Artist).join(Venue).all()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/session.py", line 53, in get_bind
+    engines = self._db.engines
+              ^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 642, in engines
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2025-09-08 12:45:28,521 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:46:43,552 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:47:01,394 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:47:07,589 ERROR: Exception on /shows [GET] [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py:1414]
+Traceback (most recent call last):
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py", line 788, in shows
+    shows = Show.query.join(Artist).join(Venue).all()
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2704, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/sqlalchemy/orm/session.py", line 2239, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/session.py", line 53, in get_bind
+    engines = self._db.engines
+              ^^^^^^^^^^^^^^^^
+  File "/Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/.venv/lib/python3.13/site-packages/flask_sqlalchemy/extension.py", line 642, in engines
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+2025-09-08 12:55:26,624 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:55:26,911 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
+2025-09-08 12:55:49,168 INFO: errors [in /Users/brenwarren/COURSE-WORK/Fyyur-artists-booking-site/app.py:858]
