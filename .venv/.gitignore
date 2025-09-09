@@ -1,17 +1,17 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
-# Folders
-venv/
-python3.9/
-**/python3.9/
-.venv/
+# # Created by venv; see https://docs.python.org/3/library/venv.html
+# # Folders
+# # venv/
+# # python3.9/
+# # **/python3.9/
+# # .venv/
 
-# PyCharm Specific
-.idea/
+# # PyCharm Specific
+# .idea/
 
-# macOS specific
-.DS_Store
+# # macOS specific
+# .DS_Store
 
-# Compiled Python files
-__pycache__/
-*.pyc
-*.pyo
+# # Compiled Python files
+# __pycache__/
+# *.pyc
+# *.pyo
